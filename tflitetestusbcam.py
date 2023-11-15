@@ -78,7 +78,7 @@ if __name__ == "__main__":
     model_path = 'efficientdet_lite0.tflite'
     label_path = 'labels.txt'
 
-    cap = cv2.VideoCapture(1)
+    cap = cv2.VideoCapture()
     cap.set(cv2.CAP_PROP_FRAME_WIDTH, CAMERA_WIDTH)
     cap.set(cv2.CAP_PROP_FRAME_HEIGHT, CAMERA_HEIGHT)
     cap.set(cv2.CAP_PROP_FPS, 15)
