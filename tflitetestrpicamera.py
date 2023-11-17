@@ -105,5 +105,5 @@ if __name__ == "__main__":
         if key == 27:  # esc
             break
 
-    cap.release()
+
     cv2.destroyAllWindows()
