@@ -5,18 +5,23 @@ import cvzone
 import tensorflow.lite as tflite
 from PIL import Image
 from picamera2 import Picamera2
+from libcamera import controls
+# Import libcamera's controls class for autofocus and controlling the Camera Module 3
 picam2 = Picamera2()
 picam2.preview_configuration.main.size = (640,480)
 picam2.preview_configuration.main.format = "RGB888"
 picam2.preview_configuration.align()
 picam2.configure("preview")
+picam2.set_controls({"AfMode": controls.AfModeEnum.Continuous})
+# Set the AfMode (Autofocus Mode) to be continuous
 picam2.start()
+
 
 CAMERA_WIDTH = 640
 CAMERA_HEIGHT = 480
 
-model_path='/home/pi/tensorflow/efficientdet_lite0.tflite'
-label_path='/home/pi/tensorflow/labels.txt'
+model_path='/home/esloof/efficientdet_lite0.tflite'
+label_path='/home/esloof/labels.txt'
 def load_labels(label_path):
     r"""Returns a list of labels"""
     with open(label_path) as f:
@@ -107,3 +112,4 @@ if __name__ == "__main__":
 
 
     cv2.destroyAllWindows()
+
