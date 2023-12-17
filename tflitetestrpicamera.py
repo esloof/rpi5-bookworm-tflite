@@ -20,8 +20,8 @@ picam2.start()
 CAMERA_WIDTH = 640
 CAMERA_HEIGHT = 480
 
-model_path='/home/esloof/efficientdet_lite0.tflite'
-label_path='/home/esloof/labels.txt'
+model_path='efficientdet_lite0.tflite'
+label_path='labels.txt'
 def load_labels(label_path):
     r"""Returns a list of labels"""
     with open(label_path) as f:
